@@ -1,0 +1,167 @@
+🃏 Software Requirements Specification (SRS): Blackjack Game
+1. Introduction
+1.1 Purpose
+
+The purpose of this document is to define the functional and non-functional requirements for the Blackjack system to be developed.
+The system will allow users to play a standard Blackjack game against a computerized dealer, following the official game rules.
+
+1.2 Scope
+
+The system will be an application (either web-based or desktop) that allows users to:
+
+Start and play Blackjack rounds.
+
+Place virtual chip bets.
+
+Perform standard Blackjack actions (“Hit,” “Stand,” “Double,” “Split”).
+
+Display the outcome of each round and the user’s balance.
+
+The system may later be expanded to include multiplayer functionality, user registration, and player statistics.
+
+1.3 Definitions
+
+Player: The user who plays the game.
+
+Dealer: The computer-controlled opponent.
+
+Hand: A set of cards dealt to the player or the dealer.
+
+Bet: The amount of virtual chips the player wagers per round.
+
+2. System Overview
+
+The Blackjack system will provide an intuitive interface where the player competes against the dealer.
+The main flow of the game will be:
+
+The player places a bet.
+
+The system deals two cards to the player and two to the dealer (one hidden).
+
+The player performs actions (Hit, Stand, Double, Split).
+
+The dealer automatically plays according to Blackjack rules.
+
+The system determines the winner and updates the player’s balance.
+
+3. Functional Requirements
+FR1. Betting System
+
+FR1.1: The player can enter a chip amount to bet before starting a round.
+
+FR1.2: The system validates that the player has enough chips to make the bet.
+
+FR2. Card Dealing
+
+FR2.1: The system deals two cards to the player and two to the dealer (one face down).
+
+FR2.2: Cards are displayed graphically on the screen.
+
+FR3. Player Actions
+
+FR3.1: The player can choose from the following actions:
+
+Hit: Draw one additional card.
+
+Stand: End the turn and keep the current total.
+
+Double: Double the current bet and receive one final card.
+
+Split: If the initial two cards have the same value, split them into two separate hands.
+
+FR3.2: The system updates the game state based on the chosen action.
+
+FR4. Dealer Turn
+
+FR4.1: The dealer plays automatically following standard Blackjack rules (draw until reaching 17 or higher).
+
+FR5. Result Calculation
+
+FR5.1: The system determines the outcome of the round:
+
+Player busts (>21): Player loses.
+
+Dealer busts (>21): Player wins.
+
+Otherwise, the hand closest to 21 wins.
+
+FR5.2: The system updates the player’s balance according to the result.
+
+FR6. User Interface
+
+FR6.1: The interface displays the player’s and dealer’s cards.
+
+FR6.2: The player’s chip balance is shown at all times.
+
+FR6.3: The system displays messages for round results (“You Win!”, “You Lose!”, “Push!”).
+
+FR7. Data Persistence (optional in version 1)
+
+FR7.1: The system may store the player’s balance and game history for future sessions.
+
+4. Non-Functional Requirements
+NFR1. Usability
+
+The interface must be simple, clear, and user-friendly, with easily accessible action buttons.
+
+NFR2. Performance
+
+All actions (deal, hit, stand) must respond within 1 second.
+
+NFR3. Portability
+
+The system must run on common web browsers and/or operating systems.
+
+NFR4. Maintainability
+
+The codebase should be modular and well-documented to allow easy feature expansion (e.g., multiplayer or statistics).
+
+NFR5. Reliability
+
+The system must handle errors gracefully (e.g., prevent invalid actions or betting without sufficient balance).
+
+5. Initial Prototype (Version 0.1)
+🎨 Screen Layouts
+1️⃣ Main Menu
+
+Title: “Blackjack”
+
+Buttons:
+
+“Play”
+
+“Exit”
+
+2️⃣ Game Screen
+
+Top Area: Dealer’s cards (one hidden).
+
+Center: Player’s cards.
+
+Bottom:
+
+Action buttons: Hit, Stand, Double, Split
+
+Bet input and current chip balance
+
+Status messages: (“Your turn…”, “You win!”, “Dealer wins!”)
+
+3️⃣ Results Screen
+
+Displays the final outcome of the round.
+
+Buttons:
+
+“New Game”
+
+“Return to Menu”
+
+6. Future Enhancements
+
+User authentication and profiles.
+
+Global leaderboard or ranking system.
+
+Detailed player statistics (win rate, average bet, etc.).
+
+Online multiplayer mode.
